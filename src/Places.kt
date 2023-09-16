@@ -1,14 +1,14 @@
 abstract class Place(
-    val name: String,
-    val location: String
+    open val name: String,
+    open val location: String
 ) {
     abstract fun showDetails()
 }
 
-class TouristSpots(
-    name: String,
-    location: String,
-    private var numVacantParking: Int,
+data class TouristSpots(
+    override val name: String,
+    override val location: String,
+    var numVacantParking: Int,
 ) : Place(name, location) {
     override fun showDetails() {
         println("""
@@ -19,11 +19,11 @@ class TouristSpots(
     }
 }
 
-class Restaurant(
-    name: String,
-    location: String,
-    private val restaurantType: String,
-    private val seatingCapacity: String,
+data class Restaurant(
+        override val name: String,
+        override val location: String,
+        val restaurantType: String,
+        var seatingCapacity: String,
 ) : Place(name, location) {
     override fun showDetails() {
         println("""

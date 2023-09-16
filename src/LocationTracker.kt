@@ -8,7 +8,6 @@ fun startingChoice() {
         What to do?
         1 - Log in as admin
         2 - Log in as guest
-        
         3 - Exit program
     """.trimIndent())
     try {
@@ -45,7 +44,6 @@ fun logInAsGuest(){
             What to do?
             1 - View tourist spot details
             2 - View restaurant details
-        
             3 - Log Out
         """.trimIndent())
         try {
@@ -110,6 +108,24 @@ fun viewRestaurantsDetails(set: MutableList<Restaurant>) {
     }
 }
 
+fun editTouristSpot() {
+    viewTouristSpotsDetails(setOfTouristSpots)
+    println("Enter the number of the tourist spot you want to edit: ")
+    val indexToBeEdited = readln().toInt()
+    println("Enter the new number of vacant parking spaces: ")
+    val numVacantParking = readln().toInt()
+    EditTouristSpot(indexToBeEdited, numVacantParking).edit()
+}
+
+fun editRestaurant(){
+    viewRestaurantsDetails(setOfRestaurants)
+    println("Enter the number of the restaurant you want to edit: ")
+    val indexToBeEdited = readln().toInt()
+    println("Enter the new seating capacity: ")
+    val seatingCapacity = readln()
+    EditRestaurant(indexToBeEdited, seatingCapacity).edit()
+}
+
 fun ownerCRUD() {
     var choice = 0
     do {
@@ -119,8 +135,8 @@ fun ownerCRUD() {
             when (choice) {
                 1 -> {viewTouristSpotsDetails(setOfTouristSpots)}
                 2 -> {viewRestaurantsDetails(setOfRestaurants)}
-                3 -> {println("Edit vacancies")} // TO DO
-                4 -> {println("Edit vacancies")} // TO DO
+                3 -> {editTouristSpot()}
+                4 -> {editRestaurant()}
                 5 -> {
                     setOfTouristSpots.add(addTouristSpot())
                 }
