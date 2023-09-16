@@ -1,0 +1,5 @@
+name,location,parking_capacity,number_vacant,parking,has_parking_Space
+Place1,Doon,10,5,True
+Place2,Diyan Lang Boss,8,0,False
+Place3,Di Ko Alam,5,3,True
+Place4,There
