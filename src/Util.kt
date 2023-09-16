@@ -1,17 +1,17 @@
-fun giveSetOfTouristSpots() : MutableSet<TouristSpots> {
+fun giveSetOfTouristSpots() : MutableList<TouristSpots> {
     val place1 = TouristSpots("Place1", "Doon", 10)
     val place2 = TouristSpots("Place2", "Diyan", 4)
     val place3 = TouristSpots("Place3", "There", 6)
     val place4 = TouristSpots("Place4", "Diretso ka lang", 0)
-    return mutableSetOf(place1,place2,place3,place4)
+    return mutableListOf(place1,place2,place3,place4)
 }
 
-fun giveSetOfRestaurants() : MutableSet<Restaurant> {
+fun giveSetOfRestaurants() : MutableList<Restaurant> {
     val place1 = Restaurant("Amy's Baking Company", "Di ko alam", "Pizzaria", "Full")
     val place2 = Restaurant("Jollibee", "Sa tabi ng Mcdo", "Fast Food", "Has Vacant Seats")
-    val place3 = Restaurant("McDonald's", "Sa tabi ng Jollibee", "Fas Food", "Has Vacant Seats")
+    val place3 = Restaurant("McDonald's", "Sa tabi ng Jollibee", "Fast Food", "Has Vacant Seats")
     val place4 = Restaurant("Burger King", "SM", "Fast Food", "Full")
-    return mutableSetOf(place1,place2,place3,place4)
+    return mutableListOf(place1,place2,place3,place4)
 }
 
 fun printOwnerCRUDChoices() {
@@ -52,6 +52,3 @@ fun addRestaurant() : Restaurant {
     return Restaurant(name,location,type, capacity)
 }
 
-fun remove() {
-
-}

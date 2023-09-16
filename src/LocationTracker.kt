@@ -90,7 +90,7 @@ fun logInAsOwner() {
     ownerCRUD()
 }
 
-fun viewTouristSpotsDetails(set: MutableSet<TouristSpots>) {
+fun viewTouristSpotsDetails(set: MutableList<TouristSpots>) {
     var num = 1
     for (i in set) {
         println("Tourist Spot # $num")
@@ -100,7 +100,7 @@ fun viewTouristSpotsDetails(set: MutableSet<TouristSpots>) {
     }
 }
 
-fun viewRestaurantsDetails(set: MutableSet<Restaurant>) {
+fun viewRestaurantsDetails(set: MutableList<Restaurant>) {
     var num = 1
     for (i in set) {
         println("Restaurant #$num")
@@ -119,23 +119,27 @@ fun ownerCRUD() {
             when (choice) {
                 1 -> {viewTouristSpotsDetails(setOfTouristSpots)}
                 2 -> {viewRestaurantsDetails(setOfRestaurants)}
-                3 -> {println("Edit vacancies")}
-                4 -> {println("Edit vacancies")}
+                3 -> {println("Edit vacancies")} // TO DO
+                4 -> {println("Edit vacancies")} // TO DO
                 5 -> {
                     setOfTouristSpots.add(addTouristSpot())
-                    ownerCRUD()
                 }
                 6-> {
                     setOfRestaurants.add(addRestaurant())
-                    ownerCRUD()
                 }
                 7 -> {
                     viewTouristSpotsDetails(setOfTouristSpots)
-                    ownerCRUD()
+                    println("Enter the number of the tourist spot you want to remove: ")
+                    val indexToBeRemoved = readln().toInt()
+                    println("removed ${setOfTouristSpots[indexToBeRemoved - 1].name}")
+                    setOfTouristSpots.removeAt(indexToBeRemoved - 1)
                 }
                 8 -> {
                     viewRestaurantsDetails(setOfRestaurants)
-                    ownerCRUD()
+                    println("Enter the number of the restaurant you want to remove: ")
+                    val indexToBeRemoved = readln().toInt()
+                    println("removed ${setOfRestaurants[indexToBeRemoved - 1].name}")
+                    setOfRestaurants.removeAt(indexToBeRemoved - 1)
                 }
                 9 -> {
                     startingChoice()
