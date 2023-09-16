@@ -1,8 +1,13 @@
-abstract class Place(
+open class Place(
     open val name: String,
     open val location: String
 ) {
-    abstract fun showDetails()
+    override fun toString(): String {
+        return """
+            Name of Place:          $name
+            Location:               $location
+        """.trimIndent()
+    }
 }
 
 data class TouristSpots(
@@ -10,12 +15,12 @@ data class TouristSpots(
     override val location: String,
     var numVacantParking: Int,
 ) : Place(name, location) {
-    override fun showDetails() {
-        println("""
+    override fun toString(): String {
+        return """
             Tourist Spot:           $name
             Location:               $location
             Vacant Parking Space:   $numVacantParking
-        """.trimIndent())
+        """.trimIndent()
     }
 }
 
@@ -25,12 +30,12 @@ data class Restaurant(
         val restaurantType: String,
         var seatingCapacity: String,
 ) : Place(name, location) {
-    override fun showDetails() {
-        println("""
+    override fun toString(): String {
+        return """
             Restaurant:         $name
             Location:           $location
             Restaurant Type:    $restaurantType
             Seating Capacity:   $seatingCapacity
-        """.trimIndent())
+        """.trimIndent()
     }
 }
