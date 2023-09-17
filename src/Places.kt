@@ -32,10 +32,10 @@ data class Restaurant(
 ) : Place(name, location) {
     override fun toString(): String {
         return """
-            Restaurant:         $name
-            Location:           $location
-            Restaurant Type:    $restaurantType
-            Seating Capacity:   $seatingCapacity
+            Restaurant:             $name
+            Location:               $location
+            Restaurant Type:        $restaurantType
+            Seating Capacity:       $seatingCapacity
         """.trimIndent()
     }
 }

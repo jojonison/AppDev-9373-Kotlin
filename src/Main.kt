@@ -1,7 +1,6 @@
-
-val user = User("Jonison", "123")
-var setOfTouristSpots = giveSetOfTouristSpots()
-var setOfRestaurants = giveSetOfRestaurants()
+val user = User("haydee", "123")
+var touristSpotsMutableList = giveListOfTouristSpots()
+var restaurantMutableList = giveListOfRestaurants()
 fun login() {
     var go = true
     while (go) {
@@ -17,16 +16,12 @@ fun login() {
                     AuthenticationResult.AccountLockout -> println("Your account is temporarily locked due to too many failed login attempts.")
                 }
             }
-            2 -> {
-                logInAsGuest()
-            }
+            2 -> {logInAsGuest()}
             3 -> {
                 println("Thank you and have a good day!")
                 go = false
             }
-            else -> {
-                println("Invalid option. Please try again.")
-            }
+            else -> {println("Invalid option. Please try again.")}
         }
     }
 }
@@ -45,18 +40,10 @@ fun logInAsGuest(){
         try {
             choice = readln().toInt()
             when (choice) {
-                1 -> {
-                    viewTouristSpotsDetails(setOfTouristSpots)
-                }
-                2 -> {
-                    viewRestaurantsDetails(setOfRestaurants)
-                }
-                3 -> {
-                    login()
-                }
-                else -> {
-                    println("Please enter a valid choice")
-                }
+                1 -> {viewTouristSpotsDetails(touristSpotsMutableList)}
+                2 -> {viewRestaurantsDetails(restaurantMutableList)}
+                3 -> {login()}
+                else -> {println("Please enter a valid choice")}
             }
         }catch (nfe: NumberFormatException) {
             println("Please enter a number")
@@ -71,36 +58,28 @@ fun logInAsOwner() {
         try {
             choice = readln().toInt()
             when (choice) {
-                1 -> {viewTouristSpotsDetails(setOfTouristSpots)}
-                2 -> {viewRestaurantsDetails(setOfRestaurants)}
-                3 -> {editTouristSpot(setOfTouristSpots)}
-                4 -> {editRestaurant(setOfRestaurants)}
-                5 -> {
-                    setOfTouristSpots.add(addTouristSpot())
-                }
-                6-> {
-                    setOfRestaurants.add(addRestaurant())
-                }
+                1 -> {viewTouristSpotsDetails(touristSpotsMutableList)}
+                2 -> {viewRestaurantsDetails(restaurantMutableList)}
+                3 -> {editTouristSpot(touristSpotsMutableList)}
+                4 -> {editRestaurant(restaurantMutableList)}
+                5 -> {touristSpotsMutableList.add(addTouristSpot())}
+                6 -> {restaurantMutableList.add(addRestaurant())}
                 7 -> {
-                    viewTouristSpotsDetails(setOfTouristSpots)
+                    viewTouristSpotsDetails(touristSpotsMutableList)
                     println("Enter the number of the tourist spot you want to remove: ")
                     val indexToBeRemoved = readln().toInt()
-                    println("removed ${setOfTouristSpots[indexToBeRemoved - 1].name}")
-                    setOfTouristSpots.removeAt(indexToBeRemoved - 1)
+                    println("removed ${touristSpotsMutableList[indexToBeRemoved - 1].name}")
+                    touristSpotsMutableList.removeAt(indexToBeRemoved - 1)
                 }
                 8 -> {
-                    viewRestaurantsDetails(setOfRestaurants)
+                    viewRestaurantsDetails(restaurantMutableList)
                     println("Enter the number of the restaurant you want to remove: ")
                     val indexToBeRemoved = readln().toInt()
-                    println("removed ${setOfRestaurants[indexToBeRemoved - 1].name}")
-                    setOfRestaurants.removeAt(indexToBeRemoved - 1)
+                    println("removed ${restaurantMutableList[indexToBeRemoved - 1].name}")
+                    restaurantMutableList.removeAt(indexToBeRemoved - 1)
                 }
-                9 -> {
-                    login()
-                }
-                else -> {
-                    println("Please enter a valid choice")
-                }
+                9 -> {login()}
+                else -> {println("Please enter a valid choice")}
             }
         } catch (nfe: NumberFormatException) {println("Please enter a number")}
     } while (choice != 0)

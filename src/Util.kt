@@ -1,4 +1,4 @@
-fun giveSetOfTouristSpots() : MutableList<TouristSpots> {
+fun giveListOfTouristSpots() : MutableList<TouristSpots> {
     val place1 = TouristSpots("Place1", "Doon", 10)
     val place2 = TouristSpots("Place2", "Diyan", 4)
     val place3 = TouristSpots("Place3", "There", 6)
@@ -6,7 +6,7 @@ fun giveSetOfTouristSpots() : MutableList<TouristSpots> {
     return mutableListOf(place1,place2,place3,place4)
 }
 
-fun giveSetOfRestaurants() : MutableList<Restaurant> {
+fun giveListOfRestaurants() : MutableList<Restaurant> {
     val place1 = Restaurant("Amy's Baking Company", "Di ko alam", "Pizzaria", "Full")
     val place2 = Restaurant("Jollibee", "Sa tabi ng Mcdo", "Fast Food", "Has Vacant Seats")
     val place3 = Restaurant("McDonald's", "Sa tabi ng Jollibee", "Fast Food", "Has Vacant Seats")
@@ -63,7 +63,7 @@ fun addRestaurant() : Restaurant {
     val location = readln()
     println("Type: ")
     val type = readln()
-    println("Seating Capacity?: ")
+    println("Seating Capacity Status?: ")
     val capacity = readln()
     return Restaurant(name,location,type, capacity)
 }
@@ -88,29 +88,29 @@ fun viewRestaurantsDetails(set: MutableList<Restaurant>) {
     }
 }
 
-fun editTouristSpot(setOfTouristSpots: MutableList<TouristSpots>) {
-    viewTouristSpotsDetails(setOfTouristSpots)
+fun editTouristSpot(touristSpots: MutableList<TouristSpots>) {
+    viewTouristSpotsDetails(touristSpots)
     println("Enter the number of the tourist spot you want to edit: ")
     val indexToBeEdited = readln().toInt()
     println("Enter the new number of vacant parking spaces: ")
     val numVacantParking = readln().toInt()
 
-    if (indexToBeEdited >= 1 && indexToBeEdited <= setOfTouristSpots.size) {
-        setOfTouristSpots[indexToBeEdited - 1].numVacantParking = numVacantParking
+    if (indexToBeEdited >= 1 && indexToBeEdited <= touristSpots.size) {
+        touristSpots[indexToBeEdited - 1].numVacantParking = numVacantParking
     } else {
         println("Invalid choice.")
     }
 }
 
-fun editRestaurant(setOfRestaurants: MutableList<Restaurant>) {
-    viewRestaurantsDetails(setOfRestaurants)
+fun editRestaurant(restaurants: MutableList<Restaurant>) {
+    viewRestaurantsDetails(restaurants)
     println("Enter the number of the restaurant you want to edit: ")
     val indexToBeEdited = readln().toInt()
     println("Enter the new seating capacity: ")
     val seatingCapacity = readln()
 
-    if (indexToBeEdited >= 1 && indexToBeEdited <= setOfRestaurants.size) {
-        setOfRestaurants[indexToBeEdited - 1].seatingCapacity = seatingCapacity
+    if (indexToBeEdited >= 1 && indexToBeEdited <= restaurants.size) {
+        restaurants[indexToBeEdited - 1].seatingCapacity = seatingCapacity
     } else {
         println("Invalid choice.")
     }
