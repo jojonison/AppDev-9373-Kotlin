@@ -15,18 +15,36 @@ import java.util.concurrent.*
 class ParkingLot(capacity: Int) {
     private val availableSlot = Semaphore(capacity)
 
-    suspend fun parkCar(cardNo: Int) {
+    suspend fun parkCar(carNo: Int) {
         try {
             availableSlot.acquire()
-            println("Car $cardNo parked.")
+            println("Car $carNo parked.")
 
             delay(2000)
+            println("Car $carNo departed.")
         } catch (e: CancellationException) {
-
+            println("Car $carNo parking was interrupted")
+        } finally {
+            availableSlot.release()
         }
     }
 }
 
 fun main() = runBlocking {
-    print("Hello World")
+    val parkingLot = ParkingLot(capacity = 5)
+    val cars = List(10) { carId ->
+        launch {
+            try {
+                delay((1..5).random() * 1000L)
+                parkingLot.parkCar(carId)
+            } catch (e: Exception) {
+                println("Car $carId encountered an error: ${e.message}")
+            }
+        }
+    }
+
+    delay(8000)
+    cars.forEach { it.cancel() }
+
+    cars.joinAll()
 }
