@@ -10,15 +10,15 @@ fun main(args: Array<String>) {
 
         print("Enter first number [E/e to exit]: ")
         val firstNum = reader.nextLine().toInt()
-         operatorBreak@ while (operator != "+" || operator != "-" || operator != "*" ||
-            operator != "/") {
-            print("Choose an operator (+ , - , *, /) [E/e to exit]: ")
-            operator = reader.nextLine();
-             if (operator != "+" || operator != "-" || operator != "*" ||
-                 operator != "/")
-                 println("asdcsa")
-                break@operatorBreak
-         }
+//         operatorBreak@ while (operator != "+" || operator != "-" || operator != "*" ||
+//            operator != "/") {
+//            print("Choose an operator (+ , - , *, /) [E/e to exit]: ")
+//            operator = reader.nextLine();
+//             if (operator != "+" || operator != "-" || operator != "*" ||
+//                 operator != "/")
+//                 println("asdcsa")
+//                break@operatorBreak
+//         }
 
         print("Enter second number [E/e to exit]: ")
         val secondNum = reader.nextLine().toInt()
