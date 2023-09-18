@@ -87,7 +87,7 @@ fun bookTaxi() {
     val choice = kbd.nextInt()
 
     val selectedTaxi = taxis.getOrNull(choice - 1)
-
+//
     if (selectedTaxi != null && !selectedTaxi.isBooked) {
         selectedTaxi()
         println("\nKilometers to your destination: ")
