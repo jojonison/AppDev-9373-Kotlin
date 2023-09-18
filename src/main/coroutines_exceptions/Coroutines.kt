@@ -8,6 +8,7 @@
 */
 
 import kotlinx.coroutines.*
+import java.util.Scanner
 
 /* The ParkingLot class represents a parking lot with a given capacity and provides methods to park and release cars. */
 class ParkingLot(capacity: Int) {
@@ -140,5 +141,42 @@ fun main() = runBlocking {
     } catch (e: Exception) {
         // Handle any unexpected exceptions in the main function
         println("Error in main function: ${e.message}")
+    }
+}
+
+fun run() = runBlocking {
+    try {
+        // The total capacity of the parking lot
+        val parkingLot = ParkingLot(capacity = 30)
+        val cars = List(100) {
+            launch {
+                try {
+                    // Simulate random arrival time
+                    delay((1..5).random() * 1000L)
+                    parkingLot.parkCar()
+                } catch (e: Exception) {
+                    // Handle exceptions during car arrival and parking
+                    println("Error during car arrival and parking: ${e.message}")
+                }
+            }
+        }
+        cars.joinAll()
+    } catch (e: Exception) {
+        // Handle any unexpected exceptions in the main function
+        println("Error in main function: ${e.message}")
+    }
+}
+
+class Coroutines {
+    companion object {
+        @JvmStatic
+        fun main(args:Array<String>)  {
+            var scanner = Scanner(System.`in`)
+
+            print("Press enter to simulate example for courotine.")
+            scanner.nextLine();
+
+            run()
+        }
     }
 }

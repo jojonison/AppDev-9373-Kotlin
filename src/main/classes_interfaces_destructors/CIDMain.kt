@@ -85,8 +85,12 @@ fun logInAsOwner() {
         } catch (nfe: NumberFormatException) {println("Please enter a number")}
     } while (choice != 0)
 }
-
-fun main() {
-    println("Welcome to the Places in Baguio Capacity Application!")
-    login()
+class CIDMain {
+    companion object  {
+    @JvmStatic
+        fun main(args: Array<String>) {
+        println("Welcome to the Places in Baguio Capacity Application!")
+        login()
+        }
+    }
 }

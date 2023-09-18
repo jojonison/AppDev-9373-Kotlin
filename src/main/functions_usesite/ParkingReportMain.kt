@@ -1,3 +1,5 @@
+import kotlinx.coroutines.suspendCancellableCoroutine
+import java.util.Scanner
 
 private fun MutableList<out Vehicle>.countAllCars(): Int {
     var count: Int = 0
@@ -61,16 +63,23 @@ fun generateReport(listOfParkedCustomers: MutableList<out Vehicle>)  {
     println("Cars: $countOfCars\nMotorcycleS: $countOfMotorcycle")
 }
 
+class ParkingReportMain {
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            var scanner = Scanner(System.`in`)
+
+            println("Generate Parking Lot Report Application")
+
+            print("Press Enter to Generate Parking Report.")
+            scanner.nextLine();
 
 
-
-fun main(args: Array<String>) {
-
-    val listOfVehicle = mutableListOf(
-        Car("asd198", 50, 6),
-        Car("ASD098", 50, 3),
-        Car("WEC499", 50, 2),
-        Car("DKL523", 50, 6),
+            val listOfVehicle = mutableListOf(
+                Car("asd198", 50, 6),
+                Car("ASD098", 50, 3),
+                Car("WEC499", 50, 2),
+                Car("DKL523", 50, 6),
 
 
 //        // Demo for Named arguments
@@ -80,11 +89,13 @@ fun main(args: Array<String>) {
 //
 //        Motorcycle(hoursOfStay = 6, parkingFee = 25, plateNumber = "AKJ234"),
 //
-        Motorcycle("OIP293", 25, 6),
-        Motorcycle("CSA235", 25, 6),
+                Motorcycle("OIP293", 25, 6),
+                Motorcycle("CSA235", 25, 6),
 
-    );
+                );
 
 
-    generateReport(listOfVehicle)
+            generateReport(listOfVehicle)
+        }
+    }
 }
