@@ -14,6 +14,7 @@ fun login() {
                     }
                     AuthenticationResult.Failure -> println("Username or Password is incorrect. Please try again!")
                     AuthenticationResult.AccountLockout -> println("Your account is temporarily locked due to too many failed login attempts.")
+                    else -> {}
                 }
             }
             2 -> {logInAsGuest()}
