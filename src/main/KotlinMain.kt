@@ -26,7 +26,7 @@ fun menu() {
 
 fun main(arg: Array<String>) {
     var scanner = Scanner(System.`in`)
-    var choice: Int = 0;
+    var choice:Int = 0
 
     while (choice != 6) {
         println("---------KOTLIN DEMO MENU---------")

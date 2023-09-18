@@ -13,9 +13,6 @@
 open class Vehicle(internal var hoursOfStay: Int, var transactionID: String) {
     var tpf: Int = 0
 
-    fun setTPF(tpf:Int) {
-
-    }
 }
 
 
@@ -48,6 +45,8 @@ class Motorcycle (var plateNumber: String, var parkingFee: Int = 25, hoursOfStay
      */
     var totalParkingFee: Int = computeParkingFee()
 
+    // computation of total parking fee
+    // 50 for cars, 35 for motorcycles. + 10 for every succeeding hour
     private fun computeParkingFee() = (hoursOfStay - 3) * 10 + parkingFee
 
     override fun toString(): String {

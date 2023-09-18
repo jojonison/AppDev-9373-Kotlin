@@ -83,7 +83,7 @@ class WasteManagement {
                 println("Do you want to log out? [Y/N]")
                 when (readln().toUpperCase()) {
                     "Y" -> {
-                        println("Thank you makil!")
+                        println("Thank you for using our application!")
                         return
                     }
                 }

@@ -1,7 +1,14 @@
 import kotlinx.coroutines.suspendCancellableCoroutine
 import java.util.Scanner
 
-private fun MutableList<out Vehicle>.countAllCars(): Int {
+/**
+ * Counts all Cars in the list
+ */
+
+// Car and Motorcycle classes are subtypes of Vehicle
+private fun MutableList<out Vehicle>.countAllCars()
+: Int {
+
     var count: Int = 0
 
     for (vehicle in this) {
@@ -10,10 +17,14 @@ private fun MutableList<out Vehicle>.countAllCars(): Int {
         }
     }
     return count;
-
 }
 
+
+/**
+ * Counts all Motorcycles in the list
+ */
 private fun MutableList<out Vehicle>.countAllMotorcycles(): Int {
+
     var count: Int = 0
 
     for (vehicle in this) {
@@ -24,6 +35,18 @@ private fun MutableList<out Vehicle>.countAllMotorcycles(): Int {
     return count;
 }
 
+//private fun MutableList<out Vehicle>.add(vehicle: (in Vehicle)-> Unit): Int {
+//
+//    var count: Int = 0
+//
+//    for (vehicle in this) {
+//        if (vehicle is Motorcycle) {
+//            count++
+//        }
+//    }
+//    return count;
+//}
+
 /**
  *  This function generates a report of the parking lot
  *      Details such as vehicle type, hours of stay, total parking fee, and transaction id is provided
@@ -33,16 +56,19 @@ private fun MutableList<out Vehicle>.countAllMotorcycles(): Int {
 fun generateReport(listOfParkedCustomers: MutableList<out Vehicle>)  {
     println("%-10s%-10s%-20s%-20s%-30s%-20s".format("","Type", "Plate Number", "Hours of Stay", "Total Parking Fee",
         "Transaction ID"))
+
     for (vehicle in listOfParkedCustomers) {
         var type: Char = ' '
         var tpf: Int = 0
         var plateNumber: String= ""
 
+        // Check if the vehicle is an instance of a Car class
         if (vehicle is Car) {
             type = 'C'
             tpf = vehicle.totalParkingFee
             plateNumber = vehicle.plateNumber
         }
+        // Check if the vehicle is an instance of a Motorcycle class
         if (vehicle is Motorcycle) {
             type = 'M'
             tpf = vehicle.totalParkingFee
@@ -75,6 +101,7 @@ class ParkingReportMain {
             scanner.nextLine();
 
 
+
             val listOfVehicle = mutableListOf(
                 Car("asd198", 50, 6),
                 Car("ASD098", 50, 3),
@@ -82,17 +109,22 @@ class ParkingReportMain {
                 Car("DKL523", 50, 6),
 
 
+//            listOfVehicle
+
 //        // Demo for Named arguments
 //        Motorcycle(plateNumber = "SAI089", parkingFee = 25, hoursOfStay = 6),
-//
 //        Motorcycle(parkingFee = 25, plateNumber = "KLJ090", hoursOfStay = 6),
-//
 //        Motorcycle(hoursOfStay = 6, parkingFee = 25, plateNumber = "AKJ234"),
 //
-                Motorcycle("OIP293", 25, 6),
-                Motorcycle("CSA235", 25, 6),
+//                Motorcycle("OIP293", 25, 6),
+//                Motorcycle("CSA235", 25, 6),
+            );
 
-                );
+//            listOfVehicle.coun
+
+
+
+
 
 
             generateReport(listOfVehicle)
