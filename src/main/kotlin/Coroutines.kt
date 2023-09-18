@@ -33,7 +33,13 @@ class ParkingLot(capacity: Int) {
             println("Car $carNo parked in spot $slotNo.")
 
             // Simulate car parking for 2 seconds
-            delay(2000)
+            try {
+                // Simulate car parking for 2 seconds
+                delay(2000)
+            } catch (e: Exception) {
+                // Handle the exception (e.g., print an error message)
+                println("Error while simulating car parking: ${e.message}")
+            }
 
             // Print if a car departed from a spot
             println("Car $carNo departed from spot $slotNo.")
@@ -49,7 +55,12 @@ class ParkingLot(capacity: Int) {
 
         // Shows the number of available slot after 20 cars parked
         if (totalCarsParked % 20 == 0) {
-            updateAvailableSlots()
+            try {
+                updateAvailableSlots()
+            } catch (e: Exception) {
+                // Handle exceptions during updating available slots
+                println("Error while updating available slots: ${e.message}")
+            }
         }
     }
 
@@ -110,20 +121,24 @@ class ParkingLot(capacity: Int) {
  * randomly within a specified time range.
  */
 fun main() = runBlocking {
-    // The total capacity of the parking lot
-    val parkingLot = ParkingLot(capacity = 30)
-    // Creates a list of 100 coroutines. Each coroutine represents a car arriving
-    // at the parking lot and parking their car.
-    val cars = List(100) {
-        launch {
-            // Simulate random arrival time
-            delay((1..5).random() * 1000L)
-            parkingLot.parkCar()
+    try {
+        // The total capacity of the parking lot
+        val parkingLot = ParkingLot(capacity = 30)
+        val cars = List(100) {
+            launch {
+                try {
+                    // Simulate random arrival time
+                    delay((1..5).random() * 1000L)
+                    parkingLot.parkCar()
+                } catch (e: Exception) {
+                    // Handle exceptions during car arrival and parking
+                    println("Error during car arrival and parking: ${e.message}")
+                }
+            }
         }
+        cars.joinAll()
+    } catch (e: Exception) {
+        // Handle any unexpected exceptions in the main function
+        println("Error in main function: ${e.message}")
     }
-
-    // Used to wait for all the coroutines in the `cars` list to complete before
-    // continuing with the execution of the program. It ensures that all the cars
-    // have finished parking before the program terminates.
-    cars.joinAll()
 }
