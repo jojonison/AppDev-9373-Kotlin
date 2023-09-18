@@ -4,7 +4,7 @@ interface ShowPlace {
 
 class ShowPlaceName : ShowPlace {
     override fun show(placeName: String) {
-        print(placeName)
+        println(placeName)
     }
 }
 
@@ -16,6 +16,5 @@ fun main() {
 
     for (i in restaurantMutableList) {
         showRestaurantName.show(i.name)
-        println()
     }
 }
