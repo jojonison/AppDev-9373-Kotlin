@@ -4,24 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff11e3ac-afdc-4565-8f98-c5d19d26db0c" name="Changes" comment="merged">
+    <list default="true" id="ff11e3ac-afdc-4565-8f98-c5d19d26db0c" name="Changes" comment="update with menu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Classes_Interfaces_Destructors/Authentication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/classes_interfaces_destructors/Authentication.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Classes_Interfaces_Destructors/Delegation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/classes_interfaces_destructors/Delegation.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Classes_Interfaces_Destructors/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/classes_interfaces_destructors/CIDMain.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Classes_Interfaces_Destructors/Places.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/classes_interfaces_destructors/Places.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Classes_Interfaces_Destructors/Util.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/classes_interfaces_destructors/Util.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Coroutines_Exceptions/Coroutines.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/coroutines_exceptions/Coroutines.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Functions_Usesite/ParkingReportMain.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions_usesite/ParkingReportMain.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Functions_Usesite/Vehicle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/functions_usesite/Vehicle.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/KotlinMain.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/KotlinMain.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Variables_NullSafety_Casting/WasteManagement.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/variables_nullsafety_casting/WasteManagement.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CoroutinesKt$main$1$cars$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CoroutinesKt$main$1$cars$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CoroutinesKt$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CoroutinesKt$main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CoroutinesKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CoroutinesKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Maervin1.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/Maervin1.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ParkingLot$parkCar$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ParkingLot$parkCar$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ParkingLot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ParkingLot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/lambda_inline_overloading/Taxi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/lambda_inline_overloading/Taxi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Maervin1.kotlin_module" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +43,6 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "bads",
     "last_opened_file_path": "C:/Users/joshu/IdeaProjects/Maervin1/src/main/Functions_Usesite",
@@ -110,9 +96,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TaxiKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TaxiKt" />
+      <module name="Maervin1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.KotlinMainKt" />
+        <item itemvalue="Kotlin.TaxiKt" />
         <item itemvalue="Kotlin.ParkingReportMainKt" />
         <item itemvalue="Kotlin.CoroutinesKt" />
         <item itemvalue="Kotlin.CoroutineKt" />
@@ -127,7 +121,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695041218497</updated>
-      <workItem from="1695041220197" duration="3688000" />
+      <workItem from="1695041220197" duration="4074000" />
     </task>
     <task id="LOCAL-00001" summary="merged">
       <created>1695042998504</created>
@@ -143,7 +137,21 @@
       <option name="project" value="LOCAL" />
       <updated>1695043022304</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update with menu">
+      <created>1695045062071</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1695045062071</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update with menu">
+      <created>1695045076981</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1695045076981</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +170,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="merged" />
-    <option name="LAST_COMMIT_MESSAGE" value="merged" />
+    <MESSAGE value="update with menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="update with menu" />
   </component>
 </project>

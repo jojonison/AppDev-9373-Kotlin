@@ -8,6 +8,7 @@ package main
 import CIDMain
 import Coroutines
 import ParkingReportMain
+import Taxi
 import java.util.Scanner
 import WasteManagement
 
@@ -48,7 +49,7 @@ fun main(arg: Array<String>) {
 
             }
             3 -> {
-
+                Taxi.main(arg)
                 print("Press enter to continue.")
                 scanner.nextLine()
                 scanner.nextLine()
