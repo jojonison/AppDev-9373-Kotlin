@@ -1,3 +1,4 @@
+import java.util.Scanner
 
 data class Taxi(val taxiNumber: String, val baseFare: Double, val perKilometerRate: Double, val quota: Double) {
     var isBooked: Boolean = false
@@ -19,6 +20,13 @@ data class Taxi(val taxiNumber: String, val baseFare: Double, val perKilometerRa
     inline fun calculateFare(distance: Double, fareCalculator: (Double) -> Double): Double {
         return fareCalculator(distance)
     }
+
+    companion object {
+        @JvmStatic
+        fun main(args:Array<String>) {
+            loginUser()
+        }
+    }
 }
 
 
@@ -32,7 +40,6 @@ fun printMenuUser() {
     println()
     getUserChoice()
 }
-
 fun getUserChoice() {
     val kbd = Scanner(System.`in`)
     println("Enter choice: ")
@@ -56,8 +63,9 @@ fun loginUser() {
         "" to "",
         "admin" to "admin"
     )
-
     val kbd = Scanner(System.`in`)
+
+    println("\nLogin to App ")
     println("Username: ")
     val user = kbd.nextLine()
     println("Password: ")
