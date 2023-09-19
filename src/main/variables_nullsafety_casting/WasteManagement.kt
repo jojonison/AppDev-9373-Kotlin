@@ -1,5 +1,6 @@
 /**
- * Description
+ * Description: A sample program about garbage collection that
+ * allows users to se a specific date and location for their garbage collection.
  */
 
 import java.text.SimpleDateFormat
@@ -28,7 +29,7 @@ class WasteManagement {
             println("Welcome to Waste Management - Baguio City!")
             while (true) {
                 print("Username: ")
-                val user: String? = readlnOrNull()
+                val user: String? = readlnOrNull() // Null-safety
                 print("Password:")
                 val pass: String? = readlnOrNull()
                 if (user == username && pass == password) {
@@ -65,7 +66,7 @@ class WasteManagement {
                     continue
                 }
 
-                // Null-safety
+
                 if (notificationsEnabled) {
                     println(NOTIFICATION)
                 } else {
