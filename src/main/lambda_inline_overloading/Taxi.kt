@@ -9,7 +9,7 @@ data class Taxi(val taxiNumber: String, val baseFare: Double, val perKilometerRa
 
     operator fun invoke() {
         if (!isBooked) {
-            println("\nTaxi $taxiNumber has been booked in Baguio City.\n")
+            println("\nTaxi $taxiNumber has been booked. \n")
             isBooked = true
         } else {
             println("\nTaxi $taxiNumber is already booked.\n")
@@ -34,10 +34,10 @@ val taxis = mutableListOf<Taxi>()
 
 fun printMenuUser() {
     println("\nBaguio City Taxi Booking System")
-    println("Welcome to the City of Pines!\n\n\n")
+    println("Welcome to the City of Pines!\n")
     println("1. Book a taxi")
-    println("2. Get the total spent amount on taxi fares")
-    println()
+    println("2. Get total quota of all taxis")
+    println("3. Exit")
     getUserChoice()
 }
 fun getUserChoice() {
@@ -48,7 +48,7 @@ fun getUserChoice() {
     when (choice) {
         1 -> bookTaxi()
         2 -> getTotalQuota()
-        3 -> printMenuUser()
+        3 -> println("Thank you for using our program!")
         else -> println("Invalid choice")
     }
 }
@@ -94,15 +94,16 @@ fun bookTaxi() {
     val choice = kbd.nextInt()
 
     val selectedTaxi = taxis.getOrNull(choice - 1)
-//
+
     if (selectedTaxi != null && !selectedTaxi.isBooked) {
-        selectedTaxi()
+        selectedTaxi() // call the overloaded method (invoke)
         println("\nKilometers to your destination: ")
         val distanceInKilometers = kbd.nextDouble()
 
         val fare = selectedTaxi.calculateFare(distanceInKilometers) { distance ->
             selectedTaxi.baseFare + (distance * selectedTaxi.perKilometerRate)
         }
+
         println("\nTaxi Fare for $distanceInKilometers kilometers for Taxi ${selectedTaxi.taxiNumber}: ₱$fare")
 
         println("Press enter to continue")
@@ -115,9 +116,14 @@ fun bookTaxi() {
     printMenuUser()
 }
 
-fun getTotalQuota() {
-    val totalQuota = taxis[0] + taxis[1]
-    println("\nTotal Quota for all taxis: $totalQuota")
 
+fun getTotalQuota() {
+    val kbd = Scanner(System.`in`)
+    val totalQuota = taxis[0] + taxis[1]
+    println("\nTotal quota for all taxis: ₱$totalQuota")
+
+    println("\nPress enter to continue...")
+    kbd.nextLine()
     printMenuUser()
 }
+
